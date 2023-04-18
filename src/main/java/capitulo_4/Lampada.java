@@ -3,28 +3,28 @@ package capitulo_4;
 
 
 class Lampada {
-    boolean acesa; // atributo, campo, variável de instância
+    private boolean acesa; // atributo, campo, variável de instância
     
     //Construtor
-    Lampada(){
-        acesa = false; 
+    Lampada(boolean estado ){
+        this.acesa = estado; 
     }
     
-    void ligar(){
-        acesa = true;
-    }
-    
-    void desligar(){
-        acesa = false; 
-    }
-    
-    String mostrarEstado(){
+   public String mostrarEstado(){
         if( acesa == true ){
             return "acesa";
         } 
         else {
             return "apagada"; 
         }
+    }
+
+    public boolean getEstado(){
+     return this.acesa;
+    }
+
+    public void setEstado(boolean estado){
+      this.acesa= estado;
     }
     
     
