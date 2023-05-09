@@ -1,10 +1,10 @@
 package capitulo_4;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] x) {
         //Lampada.java
-        Scanner scan = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
         boolean estado = true;
         int fim = 0;
         while(fim < 15){
