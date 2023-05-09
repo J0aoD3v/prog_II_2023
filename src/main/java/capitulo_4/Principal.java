@@ -6,7 +6,7 @@ public class Principal {
         //Lampada.java
         //Scanner scan = new Scanner(System.in);
         boolean estado = true;
-        int fim = 0;
+        int fim = 0; 
         while(fim < 15){
         Lampada lampada = new Lampada(estado); 
         System.out.println(lampada.mostrarEstado());
