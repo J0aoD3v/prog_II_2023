@@ -16,3 +16,5 @@ Esse projeto foi desenvolvido em Java, utilizando o IDE NetBeans.
 - Teste:
 
 ![teste](https://github.com/J0aoD3v/prog_II_2023/assets/101115833/daaa6de3-2f9b-422e-a192-65d1ef4800a6)
+
+ps: usar java swing para usar uma interface grafica mais 'amigavel' digamos assim :)
