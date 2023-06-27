@@ -13,7 +13,7 @@
     - Getters e Setters para os atributos raca e nome.
     - latir(): método que imprime na tela a mensagem "auau".
     - latirRepetido(vezes: int): método que imprime a mensagem "auau" um número de vezes especificado pelo parâmetro vezes. 
-        - Restrições: se vezes for menor que zero, a mensagem será "bugou"; se for maior que 100, a mensagem será "parâmetro inválido".
+    > Restrições: se vezes for menor que zero, a mensagem será "bugou"; se for maior que 100, a mensagem será "parâmetro inválido".
 ## Classe Container
 - Atributos:
     - capacidade (double): capacidade do container em metros quadrados
@@ -23,7 +23,8 @@
         - Container(): construtor sem parâmetros que inicia a capacidade com 0.0 e ocupado com false.
         - Container(capacidade: double, ocupado: boolean): construtor que recebe os valores para os atributos capacidade e ocupado.
     - Getters e Setters para os atributos capacidade e ocupado.
-    - ocupar(medida: double): método que recebe a medida (em m²) do conteúdo a ser ocupado no container. O método verifica se a medida é menor ou igual à capacidade e se o container não está ocupado. Se essas condições forem atendidas, o método muda o valor de ocupado para true e retorna true. Caso contrário, retorna false.
+    - ocupar(medida: double): método que recebe a medida (em m²) do conteúdo a ser ocupado no container. 
+    > O método verifica se a medida é menor ou igual à capacidade e se o container não está ocupado. Se essas condições forem atendidas, o método muda o valor de ocupado para true e retorna true. Caso contrário, retorna false.
 ## Classe BombaDeGasolina
 - Atributos:
     - tanque (double): quantidade de combustível no tanque (inicia com 5000)
@@ -31,8 +32,10 @@
 litrosVendidos (double): quantidade de litros vendidos (inicia em 0)
     - valorVendas (double): valor total das vendas (inicia em 0)
 - Métodos:
-    - abastecerPorLitro(litros: double): método que recebe a quantidade de litros que o cliente deseja abastecer. O método retira essa quantidade do tanque, incrementa os litros vendidos e calcula e incrementa o valor das vendas.
-    - abastecerPorDinheiro(valor: double): método que recebe a quantidade em reais que o cliente deseja abastecer. O método incrementa o valor das vendas, calcula a quantidade de litros correspondente ao valor fornecido, retira essa quantidade do tanque e incrementa os litros vendidos.
+    - abastecerPorLitro(litros: double): método que recebe a quantidade de litros que o cliente deseja abastecer. 
+    > O método retira essa quantidade do tanque, incrementa os litros vendidos e calcula e incrementa o valor das vendas.
+    - abastecerPorDinheiro(valor: double): método que recebe a quantidade em reais que o cliente deseja abastecer. 
+    > O método incrementa o valor das vendas, calcula a quantidade de litros correspondente ao valor fornecido, retira essa quantidade do tanque e incrementa os litros vendidos.
     - status(): método que retorna a quantidade de litros disponíveis no tanque.
 ## Classe Util
 - Métodos estáticos:
