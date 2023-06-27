@@ -12,7 +12,8 @@
         - Cachorro(raca: String, nome: String): construtor que recebe a raça e o nome do cachorro.
     - Getters e Setters para os atributos raca e nome.
     - latir(): método que imprime na tela a mensagem "auau".
-    - latirRepetido(vezes: int): método que imprime a mensagem "auau" um número de vezes especificado pelo parâmetro vezes. Restrições: se vezes for menor que zero, a mensagem será "bugou"; se for maior que 100, a mensagem será "parâmetro inválido".
+    - latirRepetido(vezes: int): método que imprime a mensagem "auau" um número de vezes especificado pelo parâmetro vezes. 
+        - Restrições: se vezes for menor que zero, a mensagem será "bugou"; se for maior que 100, a mensagem será "parâmetro inválido".
 ## Classe Container
 - Atributos:
     - capacidade (double): capacidade do container em metros quadrados
