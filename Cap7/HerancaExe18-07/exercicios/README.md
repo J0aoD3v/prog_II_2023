@@ -393,7 +393,7 @@ public class Main {
 ```
 
 Saída:
-```markdown
+```makefile
 Funcionário: Maria
 Salário: 400.0
 ---------------------------
@@ -446,6 +446,172 @@ public abstract class Projeto {
     public abstract void exibirInformacoes();
 }
 ```
+Classe Pesquisa (subclasse de Projeto):
+```java
+public class Pesquisa extends Projeto {
+    private String areaCNPQ;
+    private Double orcamento;
+
+    // Construtor
+    public Pesquisa(Integer numero, String titulo, String areaCNPQ, Double orcamento) {
+        super(numero, titulo);
+        this.areaCNPQ = areaCNPQ;
+        this.orcamento = orcamento;
+    }
+
+    // Métodos getters e setters específicos de Pesquisa
+    public String getAreaCNPQ() {
+        return areaCNPQ;
+    }
+
+    public void setAreaCNPQ(String areaCNPQ) {
+        this.areaCNPQ = areaCNPQ;
+    }
+
+    public Double getOrcamento() {
+        return orcamento;
+    }
+
+    public void setOrcamento(Double orcamento) {
+        this.orcamento = orcamento;
+    }
+
+    // Implementação do método abstrato exibirInformacoes()
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Projeto de Pesquisa");
+        System.out.println("Número: " + getNumero());
+        System.out.println("Título: " + getTitulo());
+        System.out.println("Área CNPQ: " + areaCNPQ);
+        System.out.println("Orçamento: " + orcamento);
+        System.out.println("---------------------------");
+    }
+}
+```
+Classe Extensao (subclasse de Projeto):
+```java
+public class Extensao extends Projeto {
+    private String publicoAlvo;
+    private String linha;
+
+    // Construtor
+    public Extensao(Integer numero, String titulo, String publicoAlvo, String linha) {
+        super(numero, titulo);
+        this.publicoAlvo = publicoAlvo;
+        this.linha = linha;
+    }
+
+    // Métodos getters e setters específicos de Extensao
+    public String getPublicoAlvo() {
+        return publicoAlvo;
+    }
+
+    public void setPublicoAlvo(String publicoAlvo) {
+        this.publicoAlvo = publicoAlvo;
+    }
+
+    public String getLinha() {
+        return linha;
+    }
+
+    public void setLinha(String linha) {
+        this.linha = linha;
+    }
+
+    // Implementação do método abstrato exibirInformacoes()
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Projeto de Extensão");
+        System.out.println("Número: " + getNumero());
+        System.out.println("Título: " + getTitulo());
+        System.out.println("Público Alvo: " + publicoAlvo);
+        System.out.println("Linha: " + linha);
+        System.out.println("---------------------------");
+    }
+}
+```
+Classe Ensino (subclasse de Projeto):
+```java
+public class Ensino extends Projeto {
+    private String disciplina;
+    private String curso;
+
+    // Construtor
+    public Ensino(Integer numero, String titulo, String disciplina, String curso) {
+        super(numero, titulo);
+        this.disciplina = disciplina;
+        this.curso = curso;
+    }
+
+    // Métodos getters e setters específicos de Ensino
+    public String getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    // Implementação do método abstrato exibirInformacoes()
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Projeto de Ensino");
+        System.out.println("Número: " + getNumero());
+        System.out.println("Título: " + getTitulo());
+        System.out.println("Disciplina: " + disciplina);
+        System.out.println("Curso: " + curso);
+        System.out.println("---------------------------");
+    }
+}
+```
+Exemplo de utilização:
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Projeto> projetos = new ArrayList<>();
+
+        projetos.add(new Pesquisa(1, "Pesquisa sobre Biologia", "Biologia", 5000.0));
+        projetos.add(new Extensao(2, "Projeto de Extensão Social", "Comunidade Local", "Assistência Social"));
+        projetos.add(new Ensino(3, "Curso de Programação", "Programação Java", "Ciência da Computação"));
+
+        for (Projeto projeto : projetos) {
+            projeto.exibirInformacoes();
+        }
+    }
+}
+```
+Saída:
+```makefile
+Projeto de Pesquisa
+Número: 1
+Título: Pesquisa sobre Biologia
+Área CNPQ: Biologia
+Orçamento: 5000.0
+---------------------------
+Projeto de Extensão
+Número: 2
+Título: Projeto de Extensão Social
+Público Alvo: Comunidade Local
+Linha: Assistência Social
+---------------------------
+Projeto de Ensino
+Número: 3
+Título: Curso de Programação
+Disciplina: Programação Java
+Curso: Ciência da Computação
+---------------------------
+```
+> Neste exemplo, criamos a hierarquia de herança para o contexto descrito, com as classes abstrata Projeto e concretas Pesquisa, Extensao e Ensino. Criamos uma lista de projetos e chamamos o método exibirInformacoes() de forma polimórfica para mostrar as informações de cada tipo de projeto.
 
 ## 8. 
 Com base nas classes criadas na questão 7, analise as linhas de código a seguir:
@@ -466,9 +632,25 @@ Estão corretas as instruções:
 
 ( ) Apenas as instruções II e IV
 
-( ) Apenas as instruções I e IV
+(X) Apenas as instruções I e IV
 
 ( ) Todas
+
+A análise das linhas de código em relação à hierarquia de herança é a seguinte:
+
+I. Projeto p = new Pesquisa();
+Essa instrução é válida porque estamos usando o polimorfismo. É possível criar uma referência do tipo da superclasse (Projeto) para um objeto da subclasse (Pesquisa) devido à relação "é um" entre Pesquisa e Projeto.
+
+II. Projeto p = new Projeto();
+Essa instrução é inválida porque a classe Projeto é abstrata e não pode ser instanciada diretamente. Ela só pode ser usada como classe base para outras classes.
+
+III. Pesquisa p = new Projeto();
+Essa instrução é inválida porque não podemos atribuir um objeto da superclasse (Projeto) a uma variável da subclasse (Pesquisa) diretamente. A relação "é um" deve ser respeitada, e não podemos atribuir uma instância de Projeto a uma variável do tipo Pesquisa.
+
+IV. Pesquisa p = new Pesquisa();
+Essa instrução é válida, pois estamos criando um objeto da classe Pesquisa e atribuindo-o a uma variável do tipo Pesquisa.
+
+Portanto, as instruções corretas são: Apenas as instruções I e IV.
 
 ## 9. 
 Considere as classes:
@@ -499,5 +681,16 @@ Considere as seguintes linhas de código:
 O código:
 ( ) Compila normalmente
 
-( ) Não compila pelo seguinte motivo: _____________________________________
+(X) Não compila pelo seguinte motivo: _____________________________________
 
+O código não compila pelo seguinte motivo:
+
+O método `x()` pertence à classe `Gamma`, que é uma subclasse de `Alpha`. No entanto, a variável `a` está declarada como do tipo `Alpha`, e o método `x()` não é um método da classe `Alpha`. Portanto, ao tentar chamar o método `x()` na linha 2, ocorrerá um erro de compilação porque a classe `Alpha` não possui o método `x()`.
+
+O correto seria usar um cast para chamar o método `x()` da seguinte forma:
+
+```java
+/* 1 */ Alpha a = new Gamma();
+/* 2 */ ((Gamma) a).x();
+```
+Nesse caso, a conversão explícita (cast) é utilizada para dizer ao compilador que a variável `a` é, na verdade, uma instância da classe `Gamma`, permitindo assim a chamada do método `x()`.
